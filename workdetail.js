@@ -428,10 +428,10 @@ const workDetails = {
         genres: ["Motion Graphics", "Video"],
         year: "2024",
         images: [
-            { src: "img3/2024_KW_Flos_MAIN.PNG", alt: "메인" },
-            { src: "img3/2024_KW_Flos_Image.PNG", alt: "이미지1" },
-            { src: "img3/2024_KW_Flos_Image2.PNG", alt: "이미지2" },
-            { src: "img3/2024_KW_Flos_Image3.PNG", alt: "이미지3" },
+            { src: "img3/2024_KW_PLAN_MAIN.PNG", alt: "메인" },
+            { src: "img3/2024_KW_PLAN_Image.PNG", alt: "이미지1" },
+            { src: "img3/2024_KW_PLAN_Image2.PNG", alt: "이미지2" },
+            { src: "img3/2024_KW_PLAN_image3.PNG", alt: "이미지3" },
         ]
     },
 

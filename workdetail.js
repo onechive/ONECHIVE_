@@ -1,7 +1,37 @@
 
 const workDetails = {
 
-    // --- 2025년 작품 (9개) ---
+    // --- 2025년 작품 (10개) ---
+
+
+    "2025_melt": {
+        title: "Melt 0°C",
+        period: "2025.09.02 ~ 2025.11.23",
+        quote:
+        'Melt 0℃는 얼음이 녹기 시작하는, 정지된 순간이 움직임으로 바뀌는 섬세한 변화의 경계를 담고 있습니다. ' +
+        '영원히 얼어있는 땅인 영구동토층은 0도 이상으로 올라가면 녹기 시작하고, 이로 인한 고대바이러스 출현이라는 환경적 변화를 ' +
+        '통해 인간의 감각과 의식이 깨어나는 과정을 시각적으로 탐구합니다. 오랜 시간 얼어 있던 대지가 서서히 숨을 내쉬듯, 인간의 인식 또한 기후의 변화 속에서 흔들리고 확장됩니다.'+
+        '로봇 세르마를 활용한 시간을 인공적으로 뒤돌리는 시뮬레이션으로 관객은 멈춰 있던 자연이 인공적으로 깨어나는 순간을 체험하며,'+
+        '기후 변화가 불러올 위협과 인간의 책임에 대해 다시금 성찰하도록 이끌어냅니다.'+
+        '바이러스를 제거하세요라는 창과 함께, 얼음 아래 깊숙이 잠들어있던영구동토층 속 고대 바이러스들이 빛의 파장을 따라 깨어나기 시작합니다. ' +
+        '이미 지구의 온도는 0도 이상으로 올라가 점차 상승하여 오래된 질서는 균열을 맞이하게 됩니다. '+
+        '8가지의 고대 바이러스들은 관람자 위에서 천천히 낙하하며 닿는 순간 빛처럼 사라져, 관람자에게 접촉과 소멸의 체험을 제공합니다. '+
+        '영구동토층 해빙을 기후 위기의 메타포로 활용해, 관람자는 보이지 않는 경계와 생명의 불안정한 균형을 체감합니다.  '+
+        '이 인터랙티브 콘텐츠는 참여와 몰입을 통해 기후 감수성을 확산하고, 개인 행동변화 유도를 기대할 수 있습니다. '+
+        '커뮤니케이션디자인 국제공모전 입선과 2025학년도 전공학사과정 졸업작품 ESG 우수작 선정되어 ESG 전시 출품하였습니다. '+
+        '기획, 디자인, 프로그래밍 구성으로 저는 디자인 파트에서 3D과 그래픽 디자인을 담당하였습니다. '+
+        '그동안 새로운 디자인을 도전하는 작품 제작이었다면 Melt 0℃는 저의 실력을 끌어올리며 안되는 것을 되게 하는 뜻깊은 시간이었습니다. ',
+        genres: ["Interactive Media Art"],
+        year: "2025",
+        videoLink: "https://youtu.be/gtY91Bhsp2s?si=8ero6QaFj3eeG-XV",
+        images: [
+            { src: "img3/2025_Melt_MainMotionPoster.mp4", alt: "Melt 메인 무빙 포스터 영상" },
+            { src: "img3/2025_Melt_MotionPoster1.mp4", alt: "Melt 무빙 포스터 영상1" },
+            { src: "img3/2025_Melt_MotionPoster2.mp4", alt: "Melt 무빙 포스터 영상2" },
+        ],
+    },
+
+
 
     "2025_kw_3d_hologram": {
         title: "3D Hologram",
@@ -18,6 +48,7 @@ const workDetails = {
         year: "2025",
         videoLink: "https://youtu.be/dIpHaSPzWrQ",
         images: [
+            { src: "img3/2025_kw_p_3DHologramPoster.mp4", alt: "홀로그램 무빙 포스터" },
             { src: "img3/2025_KW_3d_hologram1.jpg", alt: "홀로그램1" },
             { src: "img3/2025_KW_3d_hologram2.jpg", alt: "홀로그램2" },
 
@@ -36,6 +67,7 @@ const workDetails = {
         year: "2025",
         videoLink: "https://youtube.com/shorts/Z9mtEKg_yx0",
         images: [
+            { src: "img3/2025_kw_p_InteractionPoste.mp4", alt: "파티클 무빙 포스터" },
             { src: "img3/2025_KW_TD_Particle1.png", alt: "파티클1" },
             { src: "img3/2025_KW_TD_Particle2.png", alt: "파티클2" },
             { src: "img3/2025_KW_TD_Particle3.png", alt: "파티클3" },

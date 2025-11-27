@@ -1247,9 +1247,7 @@ body {
 
 
 
-
-/* workdetail.css */
-/* workdetail.css (최종 정리 및 수정 버전) */
+/* workdetail.css (최종 정리 및 수정 버전 - 스크롤바 숨김 적용) */
 
 /* 기본 스타일 */
 .work-detail-page {
@@ -1332,10 +1330,12 @@ body {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    /* 레퍼런스처럼 중앙이 아닌 상단에서 시작하도록 수정 */
-    /* justify-content: center; */ 
     justify-content: flex-start;
-    padding-top: 50px; /* 메타 정보와 제목 사이 간격 확보 */
+    padding-top: 50px; 
+    /* 스크롤 기능 부여 */
+    overflow-y: auto; 
+    /* 스크롤바가 숨겨지더라도 패딩은 유지 (필요 없을 수 있지만, 혹시 모를 상황 대비) */
+    padding-right: 15px; 
 }
 
 .project-title-lg {
@@ -1378,7 +1378,6 @@ body {
 .genre-list span {
     font-size: 14px;
     color: #fff;
-    /* 네모 박스 제거 및 깔끔한 목록 스타일 */
     padding: 0;
 }
 
@@ -1388,8 +1387,6 @@ body {
     font-size: 14px; 
     padding-top: 20px;
 }
-
-
 
 
 .view-link-container {
@@ -1407,7 +1404,7 @@ body {
 
     width: 100%; /* 가로로 길게, 전체 너비 사용 */
     background: none;
-    border: 1px solid #fff; /* ✅ 얇은 흰색 선 박스 추가 */
+    border: 1px solid #fff; /* 얇은 흰색 선 박스 추가 */
     padding: 15px 0; /* 위아래 패딩을 늘려 높이 확보 */
     margin-top: 30px; /* 위쪽 여백 추가 */
 
@@ -1441,7 +1438,6 @@ body {
 }
 
 
-
 /* 비디오를 감싸는 컨테이너 스타일 */
 .video-container {
     width: 100%; /* 부모 요소의 전체 너비를 사용 */
@@ -1469,6 +1465,18 @@ body {
     padding-bottom: 10px; /* 버튼을 위한 공간 확보 */
 }
 
+/* ---------------------------------------------------------------------- */
+/* ⭐ 웹킷 브라우저 (Chrome, Safari, Edge)에서 스크롤바 숨기기 ⭐ */
+.info-middle::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+}
+
+.info-middle {
+    /* Firefox에서 스크롤바 숨기기 */
+    scrollbar-width: none; 
+}
+/* ---------------------------------------------------------------------- */
 
 
 

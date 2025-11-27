@@ -635,3 +635,17 @@ stones.forEach((stone, index) => {
         yoyo: true // 갔다가 돌아오는 반복
     });
 });
+
+
+// script.js 파일의 끝에 추가
+
+// URL에서 workId를 가져와 renderWorkDetail 함수를 호출하는 코드
+document.addEventListener('DOMContentLoaded', function() {
+    const params = new URLSearchParams(window.location.search);
+    const workId = params.get('workId');
+    
+    // workId가 유효하면 데이터 렌더링 함수 실행
+    if (workId && typeof renderWorkDetail === 'function') {
+        renderWorkDetail(workId);
+    }
+});

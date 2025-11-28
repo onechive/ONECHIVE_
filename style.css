@@ -13,6 +13,77 @@
     box-sizing: border-box;
 }
 
+
+
+
+
+/* style.css 파일 (상단, 기존 PC 스타일 정의 부분) */
+
+/* 1. 범용적인 이미지/비디오 유동성 설정 */
+img,
+video {
+    max-width: 100%; /* 이미지가 부모 너비보다 커지는 것 방지 */
+    height: auto;    /* 비율 유지 */
+    display: block;
+}
+
+/* 2. 영상 컨테이너 설정 (PC 최대 크기 제한 및 중앙 정렬) */
+.video-wrapper {
+    max-width: 1200px; /* PC에서 영상의 최대 너비 제한 */
+    margin: 0 auto;    /* 중앙 정렬 */
+    /* 여기에 기존에 사용하시던 패딩/마진 등 PC용 여백 값이 있다면 넣어주세요 */
+}
+.video-wrapper iframe {
+    width: 100%;       /* 부모 크기에 꽉 채움 */
+    aspect-ratio: 16 / 9; /* 16:9 비율 유지 */
+    height: auto; 
+}
+
+
+/* 3. 유연한 텍스트 크기 설정 (핵심: clamp() 사용) */
+/* - 폰트 크기가 (최소 24px) ~ (최대 48px) 사이에서
+   - 중간 값인 2.5vw를 따라 유연하게 조정됩니다. 
+   - 이 설정 덕분에 PC에서도 창을 줄이면 폰트가 함께 작아집니다. 
+*/
+h1 {
+    font-size: clamp(24px, 2.5vw, 48px); 
+}
+h2 {
+    /* h2도 원하는 최소/최대/vw 값으로 설정 */
+    font-size: clamp(20px, 1.8vw, 36px); 
+}
+/* p 태그도 유연하게 만들려면 여기에 추가 */
+p {
+    font-size: clamp(14px, 0.9vw, 18px); 
+}
+
+
+/* 4. 주요 컨테이너의 크기 및 여백에 vw 적용 */
+.value-card {
+    width: 20vw;   /* 너비도 vw를 사용하여 유연하게 축소됩니다. */
+    padding: 1vw;  /* 패딩도 vw로 설정 */
+    /* 여기에 기존에 사용하시던 flex나 grid 관련 속성은 그대로 두세요. */
+}
+.value-card img {
+    display: block;
+    margin: 0 auto;
+    height: auto; /* 🌟 이 줄을 추가합니다: 이미지 비율 유지 🌟 */
+}
+.text-layout {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 100px;
+}
+
+
+
+
+
+
+
+
+
+
 html {
     scroll-behavior: smooth;
 }
@@ -430,7 +501,7 @@ body {
 
 .symbol-logo {
     width: 550px;
-    margin: 40px 0;
+    margin: 40px auto;;
 }
 
 
@@ -846,6 +917,10 @@ body {
     width: 120px;
     opacity: 0.9;
     margin-bottom: 30px;
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto; 
+
 }
 
 /* 4. 카피라이트 */
@@ -1707,6 +1782,11 @@ body {
     margin: 0;
     padding: 0;
 }
+.name-kr {
+    font-weight: 300; 
+    font-size: 30px; 
+    margin-bottom: px;
+}
 .name-en {
     font-family: 'Pretendard', sans-serif;
     font-size: 20px;
@@ -1741,6 +1821,10 @@ body {
     object-fit: cover;
     display: block;
 }
+.profile-grid-container { 
+    display: grid;
+    gap: 30px 50px;
+}
 
 
 /* 2. Information Blocks (공통 스타일) */
@@ -1767,7 +1851,7 @@ body {
     text-align: left;
 }
 .timeline-item {
-    margin-bottom: 15px; 
+    margin-bottom: 25px;
 }
 .timeline-title, .award-title {
     font-weight: 600;
@@ -1778,67 +1862,67 @@ body {
     color: #bbb; 
     font-size: 14px;
     margin-bottom: 0; 
+    white-space: nowrap;
 }
 .information .info-item p, .contact-info .info-item p {
     margin-bottom: 8px;
     line-height: 1.2;
 }
 
-
 /* ========================================================== */
-/* --- 그리드 배치 (SKILLS 섹션 기준으로 Row 시작점 통일) --- */
+/* --- 그리드 배치 (ADVANTAGE 아래로 교내 활동 이동) --- */
 /* ========================================================== */
 
-/* [1열] SKILLS 섹션: 1열, 2행 시작 (Main Info 아래, 모든 섹션의 수평 기준) */
+/* [1열] SKILLS 섹션: 1열, 2행 시작 (기존 유지) */
 .skills {
     grid-column: 1 / span 1; 
     grid-row: 2 / span 1; 
     margin-top: 0; 
 }
 
-/* [3열] EDUCATION 섹션: 3열, 2행 시작 */
+/* [3열] EDUCATION 섹션: 3열, 2행 시작 (기존 유지) */
 .education {
     grid-column: 3 / span 1; 
-    grid-row: 2 / span 1; /* 2행 시작 (SKILLS와 수평) */
+    grid-row: 2 / span 1;
 }
 
-/* [3열] CERTIFICATION 섹션: 3열, 3행 */
+/* [3열] CERTIFICATION 섹션: 3열, 3행 (기존 유지) */
 .certification {
     grid-column: 3 / span 1;
     grid-row: 3 / span 1; 
     margin-bottom: 80px; 
 }
 
-/* [3열] ADVANTAGE 섹션: 3열, 4행 */
-.advantage {
-    grid-column: 3 / span 1;
-    grid-row: 4 / span 1; 
-    text-align: left; 
-    font-weight: 600;
-}
-
-/* [4열] EXPERIENCE 섹션: 4열, 2행 시작 */
+/* [4열] EXPERIENCE 섹션: 4열, 2행 시작 (기존 유지) */
 .experience {
     grid-column: 4 / span 1; 
-    grid-row: 2 / span 1; /* 2행 시작 (SKILLS와 수평) */
+    grid-row: 2 / span 1; 
     margin-bottom: 80px; 
 }
 
-/* [4열] AWARDS 섹션: 4열, 3행 */
+/* [4열] AWARDS 섹션: 4열, 3행 (기존 유지) */
 .awards {
     grid-column: 4 / span 1; 
     grid-row: 3 / span 1; 
     margin-bottom: 80px; 
 }
 
-/* [5열] CAMPUS ACTIVITY 섹션: 5열, 2행 시작 */
-.campus-activity {
+/* [5열] ADVANTAGE 섹션: 5열, 2행 시작 */
+.advantage {
+    /* ADVANTAGE를 5열 2행에 배치 (상단 위치) */
     grid-column: 5 / span 1; 
-    grid-row: 2 / span 1; /* 2행 시작 (SKILLS와 수평) */
-    margin-bottom: 80px;
+    grid-row: 2 / span 1; 
+    text-align: left; 
+    font-weight: 600;
 }
 
-
+/* [5열] CAMPUS ACTIVITY 섹션: 5열, 3행 시작 */
+.campus-activity {
+    /* 🌟 교내 활동을 ADVANTAGE 아래인 5열 3행에 배치합니다. 🌟 */
+    grid-column: 5 / span 1; 
+    grid-row: 3 / span 1; 
+    margin-bottom: 80px;
+}
 /* ========================================================== */
 /* --- Responsive Design (유동적 간격 유지) --- */
 /* ========================================================== */
@@ -2061,3 +2145,71 @@ body {
         gap: 10px;
     }
 }
+
+
+
+
+
+
+
+
+
+/* style.css 파일 (맨 마지막) */
+
+/* ---------------------------------------------------- */
+/* ⚠️ 좁은 화면 레이아웃 재정의 (600px 이하) */
+/* ---------------------------------------------------- */
+@media (max-width: 600px) {
+
+    /* 1. 레이아웃 배치 변경: 가로 카드들을 세로로! */
+    .card-container {
+        flex-direction: column; /* 가로 배열을 세로 배열로 변경 */
+    }
+    
+    .value-card {
+        width: 90%; /* 모바일 화면 너비의 거의 꽉 채움 */
+        margin-bottom: 20px;
+    }
+
+    /* 2. STORY, MISSION 텍스트 레이아웃 변경 */
+.text-layout {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 100px;
+}
+    .title-column, .desc-column {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    /* 3. SKILL 섹션 레이아웃 변경 */
+    .skill-layout {
+        flex-direction: column;
+    }
+    .skill-grid {
+        /* 필요하다면 모바일에서 grid 구조 변경 */
+        grid-template-columns: 1fr; 
+    }
+
+    /* 4. 폰트 재정의 (선택 사항) */
+    /* clamp()로도 충분하지만, 모바일에서 특정 폰트를 더 읽기 편한 
+       고정 크기(rem)로 지정하고 싶다면 여기서 덮어씌웁니다. 
+    */
+    h1 {
+        font-size: 2rem; /* clamp() 대신 고정값으로 덮어씌움 */
+    }
+}
+
+
+/* ---------------------------------------------------- */
+/* 🥉 태블릿 스타일 (선택 사항: 601px ~ 1024px) */
+/* ---------------------------------------------------- */
+@media (max-width: 1024px) {
+    /* 폰트나 레이아웃이 600px 전에 한 번 더 정리될 필요가 있을 때 사용 */
+    .section-intro h1 {
+        /* 여기서 font-size: 2.5em; 은 기존 h1의 폰트 크기를 기준으로 2.5배 커진다는 의미입니다. */
+        /* vw를 사용하는 것이 더 유연하므로, 이 부분은 생략하거나 필요한 경우에만 최소한으로 사용하세요. */
+    }
+}
+
+

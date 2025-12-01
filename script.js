@@ -1,11 +1,9 @@
-// GSAP 플러그인은 공통으로 사용되므로 맨 위에 한 번만 등록합니다.
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-// DOM이 완전히 로드된 후 스크립트를 실행합니다.
 document.addEventListener('DOMContentLoaded', function () {
 
     // =============================================
-    // 1. 공통 기능: 부드러운 스크롤 & 스크롤 애니메이션
+    // 1. 전체 적용 - 부드러운 스크롤 & 스크롤 애니메이션
     // =============================================
 
     // 부드러운 스크롤 설정
@@ -48,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // =============================================
     const heroArea = document.querySelector(".hero-interaction-area");
 
-    // 💥 안전장치: heroArea 요소가 있는 (index.html) 페이지에서만 실행
+    // 안전장치: heroArea 요소가 있는 (index.html) 페이지에서만 실행
     if (heroArea) { 
         console.log("인덱스 페이지 전용 스크립트 실행"); 
         
@@ -130,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-        // ✅ 헤더가 특정 스크롤 지점에서 나타나고 사라지게 하는 기능 추가
+        // 헤더가 특정 스크롤 지점에서 나타나고 사라지게 하는 기능 추가
     ScrollTrigger.create({
         trigger: "#divider-space", // 헤더를 띄울 기준 요소 (HTML에 이 ID가 있어야 함)
         start: "top 80px", // #divider-space 요소 상단이 뷰포트 80px 지점에 닿으면
@@ -155,12 +153,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // =============================================
-    // 3. Work.html 전용 기능: 장르 필터링
+    // 3. Work.html: 장르 필터링
     // =============================================
     const genreFilterList = document.getElementById('genre-filter-list');
     const projectCards = document.querySelectorAll('.project-card');
 
-    // 💥 안전장치: 필터 요소가 있는 (work.html) 페이지에서만 실행
+    // 안전장치: 필터 요소가 있는 (work.html) 페이지에서만 실행
     if (genreFilterList && projectCards.length > 0) {
         console.log("워크 페이지 필터 스크립트 실행");
 
@@ -198,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // =============================================
-    // 4. 공통 기능: 사용 프로그램 팝업창 (Skill Popup)
+    // 4. 전체 적용: 사용 프로그램 팝업창 (Skill Popup)
     // =============================================
     const popupOverlay = document.getElementById('popup-overlay');
     const skillBoxes = document.querySelectorAll('.skill-box');
@@ -367,7 +365,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const start = (page - 1) * worksPerPage;
         const end = start + worksPerPage;
 
-        allProjectCards.forEach(card => card.style.display = 'none'); // 일단 모든 카드를 숨깁니다.
+        allProjectCards.forEach(card => card.style.display = 'none'); // 일단 모든 카드를 숨김.
 
         filteredWorks.forEach((card, index) => {
             if (index >= start && index < end) {
@@ -388,7 +386,7 @@ document.addEventListener('DOMContentLoaded', function () {
         paginationContainer.innerHTML = '';
         const pageCount = Math.ceil(filteredWorks.length / worksPerPage);
 
-        // 페이지가 1개 이하면 버튼을 만들 필요가 없습니다.
+        // 페이지가 1개 이하면 버튼을 만들 필요가 없.
         if (pageCount <= 1) return; 
 
         for (let i = 1; i <= pageCount; i++) {
@@ -453,7 +451,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // ----------------------------------------------------
     // 3. 초기화 (페이지 로드 시)
     // ----------------------------------------------------
-    // 초기에는 'all' 필터와 동일하게 모든 작품을 대상으로 시작합니다.
+    // 초기에는 'all' 필터와 동일하게 모든 작품을 대상으로 시작.
     filteredWorks = allProjectCards;
     displayWorks(currentPage);
     setupPagination();
@@ -467,10 +465,10 @@ const popupGridContent = document.getElementById('popup-grid-content');
 
 // 예시: 'Figma' 팝업 내용을 생성하는 함수
 function createFigmaPopupContent() {
-    // workData에서 Figma 작품 목록을 가져옵니다. (workData가 이미 로드되어 있어야 함)
+    // workData에서 Figma 작품 목록을 가져오기 (workData가 이미 로드되어 있어야 함)
     const works = workData['Figma'] ? workData['Figma'].works : [];
     
-    // 이전에 있던 내용을 비웁니다.
+    // 이전에 있던 내용을 비우기.
     popupGridContent.innerHTML = ''; 
 
     works.forEach(work => {
@@ -497,14 +495,12 @@ function createFigmaPopupContent() {
 
 
 
-// 제공해주신 1번 JS 파일의 맨 마지막 줄 뒤에 이 코드를 추가하세요.
-
 // =============================================
 // 6. 작품 상세 미디어 렌더링 함수 추가 (workdetail.html에서 호출됨)
-//    - projectDetailData는 다른 JS 파일에서 정의되었다고 가정합니다.
+//    - projectDetailData는 다른 JS 파일에서 정의되었다고 가정.
 // =============================================
 function renderProjectDetail(projectId) {
-    // ⚠️ projectDetailData는 다른 JS 파일에 전역 변수로 정의되어 있어야 합니다.
+    // projectDetailData는 다른 JS 파일에 전역 변수로 정의되어 있어야 함.
     const project = window.projectDetailData ? window.projectDetailData[projectId] : null; 
     const detailContainer = document.getElementById('project-detail-section'); 
 
@@ -566,7 +562,7 @@ const stones = gsap.utils.toArray(".space-stone");
 
 stones.forEach((stone, index) => {
     
-    // 💡 초기 설정: 중심점 보정 및 마우스 이벤트 활성화
+    // 초기 설정: 중심점 보정 및 마우스 이벤트 활성화
     gsap.set(stone, { 
         xPercent: -50,   // X축 중심 보정
         yPercent: -50,   // Y축 중심 보정
@@ -578,11 +574,11 @@ stones.forEach((stone, index) => {
         type: "x,y",
         // edgeResistance와 bounds: "body"는 이전 단계의 문제로 인해
         // '#hero' 경계와 inertia 상세 설정으로 대체하는 것이 권장되지만,
-        // 사용자님의 요청에 따라 기존 값으로 유지하고 inertia만 상세 조정합니다.
+        // 기존 값으로 유지하고 inertia만 상세 조정.
         edgeResistance: 0.8,
         bounds: "body",
         
-        // 🚀 우주 중력처럼 부드럽게 미끄러지도록 inertia 상세 설정
+        // 우주 중력처럼 부드럽게 미끄러지도록 inertia 상세 설정
         inertia: {
             duration: 5,                // 관성 움직임 시간을 5초로 매우 길게 설정 (오래 미끄러짐)
             ease: "none",               // 이징을 'none'으로 설정하여 제동 없이 일정한 속도로 미끄러지게 함
@@ -594,7 +590,7 @@ stones.forEach((stone, index) => {
         onDragStart: function() {
             gsap.to(stone, { opacity: 1, duration: 0.1 });
             gsap.getTweensOf(stone).forEach(t => t.pause());
-            // 💡 자동 움직임(Self-Movement) 애니메이션 일시 정지
+            // 자동 움직임(Self-Movement) 애니메이션 일시 정지
             stone.selfMovement.pause(); 
         },
         
@@ -602,7 +598,7 @@ stones.forEach((stone, index) => {
         onDragEnd: function() {
             // 드래그가 끝난 후 회전 및 자동 움직임 애니메이션 재개
             stone.gsapAnimation.play();
-            stone.selfMovement.play(); // 💡 자동 움직임 재개
+            stone.selfMovement.play(); // 자동 움직임 재개
             
             // 드래그 종료 시 opacity 복원
             gsap.to(stone, { opacity: 0.8, duration: 0.5 });
@@ -620,8 +616,8 @@ stones.forEach((stone, index) => {
         repeat: -1
     });
 
-    // 4. 💡 스톤 스스로 움직이게 하는 애니메이션 추가 (Self-Movement)
-    // x와 y축을 불규칙하게 움직여 부유하는 느낌을 줍니다.
+    // 4. 스톤 스스로 움직이게 하는 애니메이션 추가 (Self-Movement)
+    // x와 y축을 불규칙하게 움직여 부유하는 느낌.
     const moveDuration = 10 + (index * 2);
     const moveAmountX = (index % 3) * 10 + 20; // 20px ~ 50px 범위
     const moveAmountY = (index % 4) * 10 + 30; // 30px ~ 60px 범위

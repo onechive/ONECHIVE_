@@ -22,29 +22,25 @@
 /* 1. 범용적인 이미지/비디오 유동성 설정 */
 img,
 video {
-    max-width: 100%; /* 이미지가 부모 너비보다 커지는 것 방지 */
-    height: auto;    /* 비율 유지 */
+    max-width: 100%; 
+    height: auto;   
     display: block;
 }
 
 /* 2. 영상 컨테이너 설정 (PC 최대 크기 제한 및 중앙 정렬) */
 .video-wrapper {
-    max-width: 1200px; /* PC에서 영상의 최대 너비 제한 */
-    margin: 0 auto;    /* 중앙 정렬 */
-    /* 여기에 기존에 사용하시던 패딩/마진 등 PC용 여백 값이 있다면 넣어주세요 */
+    max-width: 1200px; 
+    margin: 0 auto;   
+   
 }
 .video-wrapper iframe {
-    width: 100%;       /* 부모 크기에 꽉 채움 */
-    aspect-ratio: 16 / 9; /* 16:9 비율 유지 */
+    width: 100%;       
+    aspect-ratio: 16 / 9; 
     height: auto; 
 }
 
 
-/* 3. 유연한 텍스트 크기 설정 (핵심: clamp() 사용) */
-/* - 폰트 크기가 (최소 24px) ~ (최대 48px) 사이에서
-   - 중간 값인 2.5vw를 따라 유연하게 조정됩니다. 
-   - 이 설정 덕분에 PC에서도 창을 줄이면 폰트가 함께 작아집니다. 
-*/
+
 h1 {
     font-size: clamp(24px, 2.5vw, 48px); 
 }
@@ -58,16 +54,16 @@ p {
 }
 
 
-/* 4. 주요 컨테이너의 크기 및 여백에 vw 적용 */
+
 .value-card {
-    width: 20vw;   /* 너비도 vw를 사용하여 유연하게 축소됩니다. */
-    padding: 1vw;  /* 패딩도 vw로 설정 */
-    /* 여기에 기존에 사용하시던 flex나 grid 관련 속성은 그대로 두세요. */
+    width: 20vw;  
+    padding: 1vw;  
+    
 }
 .value-card img {
     display: block;
     margin: 0 auto;
-    height: auto; /* 🌟 이 줄을 추가합니다: 이미지 비율 유지 🌟 */
+    height: auto;
 }
 .text-layout {
     display: flex;
@@ -97,14 +93,14 @@ body {
 
 .full-section {
     width: 100%;
-    min-height: 100vh; /* ✅ height -> min-height로 변경 */
+    min-height: 100vh; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
     overflow: hidden;
-    padding: 40px 0; /* 위아래 여백을 추가하여 내용이 너무 클 때 공간 확보 */
+    padding: 40px 0; 
 }
 
 .content-section {
@@ -136,10 +132,10 @@ body {
     display: flex;
     justify-content: flex-end;
     
-    /* ✅ 유리 질감 효과 추가 */
-    background-color: rgba(0, 0, 0, 0.5); /* 반투명 검은색 배경 */
-    backdrop-filter: blur(10px); /* 배경을 흐릿하게 만듭니다. */
-    -webkit-backdrop-filter: blur(10px); /* Safari 지원 */
+  
+    background-color: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
     
     opacity: 0;
     transform: translateY(-100%);
@@ -180,12 +176,12 @@ body {
 
 /* hero 섹션이 비디오를 포함하도록 위치 설정 */
 #hero.full-section {
-    position: relative; /* ✅ 비디오의 absolute 기준점 */
+    position: relative; 
     background-color: #000;
     z-index: 1; 
 }
 
-/* ✅ 배경 비디오 스타일 */
+
 .hero-background-video {
     position: absolute;
     top: 50%;
@@ -233,8 +229,8 @@ body {
     font-size: 650px;
     position: relative;
     top: 8px;
-    left: -30px; /* 원하는 만큼 왼쪽으로 이동 (40px 예시) */
-    margin-right: 20px; /* (이전 수정된 값 유지) */
+    left: -30px; 
+    margin-right: 20px; 
 }
 
 .hero-interaction-area {
@@ -257,14 +253,14 @@ body {
 }
 
 
-/* --- 버튼 깜빡임 애니메이션 정의 --- */
+
 @keyframes slowFlicker {
     0%, 100% { opacity: 0.1; }
     50% { opacity: 0.6; }
     75% { opacity: 0.3; }
 }
 
-/* .hero-btn 기본 스타일 및 깜빡임 초기 투명도 설정 */
+
 .hero-btn {
     position: absolute;
     color: #fff;
@@ -275,7 +271,7 @@ body {
     font-size: 18px;
     transition: all 0.3s ease;
     
-    /* ✅ GSAP 애니메이션 시작 전 초기 투명도 */
+
     opacity: 0.1; 
     
     transform: scale(0.8);
@@ -512,8 +508,8 @@ body {
 
 .logo-feature-content p {
      display: block; /* 한 줄로 내리기 */
-    font-size: 20px; /* 크기를 더 작게 */
-    color: #a8a8a8; /* 색상을 조금 어둡게 */
+    font-size: 20px; 
+    color: #a8a8a8; 
     font-family: 'Gothic A1', sans-serif;
     font-weight: 200;
     margin-top: 10px;
@@ -597,14 +593,14 @@ body {
 .skill-box span {
     font-size: 16px;
     color: #888;
-    margin-bottom: 40px; /* ✅ 01/02 숫자 아래에 공간을 만들어 아래 요소와 분리 */
-    font-weight: 300; /* ✅ 굵기를 얇게 조정 */
+    margin-bottom: 40px; 
+    font-weight: 300;
 }
 
 .skill-box h4 {
     font-size: 24px;
-    font-weight: 300; /* ✅ 굵기를 500에서 300으로 얇게 조정 */
-    margin-top: auto; /* ✅ 아래쪽 공간을 모두 차지하도록 하여 박스 하단에 붙입니다. */
+    font-weight: 300; 
+    margin-top: auto; 
 }
 
 
@@ -703,9 +699,9 @@ body {
     color: #fff;
     opacity: 0.7;
     transition: opacity 0.3s ease;
-    left: 0;       /* ⬅️ 왼쪽 시작점을 0으로 설정 */
-    width: 100%;   /* ⬅️ 너비를 100%로 늘려 박스를 채움 */
-    text-align: center; /* ⬅️ 텍스트를 중앙 정렬 */
+    left: 0;       
+    width: 100%;   
+    text-align: center; 
 
 }
 
@@ -749,9 +745,9 @@ body {
     background-color: #f7f7f7;
     color: #333;
     width: 90%;
-    max-width: 1200px; /* 가로 최대 너비를 더 늘립니다. */
+    max-width: 1200px; 
     height: 70%;
-    max-height: 500px; /* 세로 최대 높이를 줄여 가로 비율을 맞춥니다. */
+    max-height: 500px; 
     position: relative;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
     display: flex;
@@ -777,7 +773,7 @@ body {
 /* 작품 목록 그리드 */
 .popup-grid-content {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 이 부분을 추가하거나 수정합니다. */
+    grid-template-columns: 1fr 1fr;
     gap: 1px;
     flex-grow: 1;
     overflow-y: auto;
@@ -801,7 +797,7 @@ body {
     overflow: hidden;
     cursor: pointer;
     transition: background-color 0.2s ease;
-    text-decoration: none; /* ✅ 이 부분을 추가하여 밑줄을 제거합니다. */
+    text-decoration: none; 
 }
 
 .grid-item:hover {
@@ -845,7 +841,7 @@ body {
     right: 0;
     transform: translateY(-50%) translateX(100%);
     height: 100%;
-    width: 100%; /* 너비를 200px에서 100%로 변경 */
+    width: 100%;
     object-fit: cover;
     opacity: 0;
     transition: transform 0.4s ease-out, opacity 0.4s ease-out;
@@ -951,17 +947,12 @@ body {
 /* space-stone 기본 스타일 */
 /* 전체 스톤을 담는 컨테이너 */
 .space-stones-container {
-    /* ❌ absolute -> fixed 로 변경: 스크롤해도 화면에 고정됨 */
     position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* 화면 전체 높이로 설정 */
-    
-    /* 💡 z-index를 가장 높게 설정: 모든 섹션 위에 떠 있게 만듭니다. */
+    height: 100%; 
     z-index: 9; 
-    
-    /* pointer-events: none; 은 유지합니다. (아래 버튼 클릭 가능하도록) */
     pointer-events: none; 
 }
 
@@ -975,10 +966,7 @@ body {
     transform-origin: center center;
 }
 
-/* 각 스톤의 개별 위치와 스타일 (position: fixed; 에 맞게 수정) */
-/* 각 스톤의 개별 위치와 스타일 */
-/* style.css 파일: 각 스톤의 개별 위치와 스타일 수정 */
-/* 각 스톤의 개별 위치와 스타일 (스크롤 없이 보이도록 수정) */
+
 .space-stone.stone-1 {
     width: 100px;
     top: 500px; 
@@ -1080,9 +1068,9 @@ body {
 
 /* --- WORK 히어로 섹션 추가 --- */
 .work-hero-section {
-    min-height: 100vh; /* 화면 전체 높이를 차지 */
+    min-height: 100vh; 
     position: relative;
-    padding-top: 80px; /* 헤더 공간 확보 */
+    padding-top: 80px;
     
     /* WORK 텍스트를 중앙에 배치 */
     display: flex;
@@ -1097,13 +1085,10 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    
-    /* ✅ 배경 이미지 설정 (경로를 반드시 수정해 주세요!) */
     background-image: url('img2/work_main.mp4'); 
-    
     background-size: cover;
     background-position: center;
-    opacity: 0.1; /* 이미지를 약간 어둡게 처리하여 텍스트 가독성을 높입니다. */
+    opacity: 0.1; 
     z-index: 1; 
 }
 
@@ -1119,10 +1104,10 @@ body {
 /* 1. 필터 컨테이너 */
 .work-filter-container {
     display: flex;
-    justify-content: center; /* ✅ 중앙 정렬 */
+    justify-content: center;
     align-items: center;
     padding: 0 40px;
-    margin-bottom: 50px; /* 그리드와의 간격 */
+    margin-bottom: 50px; 
 }
 
 /* 장르 필터 스타일 */
@@ -1130,21 +1115,21 @@ body {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* ✅ 가로로 정렬 */
-    flex-wrap: wrap; /* 화면이 작아지면 줄바꿈 */
-    justify-content: center; /* 중앙 정렬 */
-    gap: 30px; /* 아이템 간 간격 */
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 30px; 
 }
 
 .filter-genre li {
     font-size: 17px;
     font-weight: 500;
-    color: #666; /* ✅ 기본 색상은 회색 */
+    color: #666;
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
-/* ✅ 마우스를 올렸을 때와 활성화 상태일 때 모두 흰색으로 변경 */
+
 .filter-genre li:hover,
 .filter-genre li.active {
     color: #fff;
@@ -1158,8 +1143,6 @@ body {
 .project-grid-wrapper {
     margin-top: 50px;
     padding: 0 10px;
-    
-    /* ✅ 그리드 전체를 중앙 정렬하기 위해 추가 */
     display: flex; 
     justify-content: center;
     align-items: center;
@@ -1171,13 +1154,9 @@ body {
     grid-template-columns: repeat(2, 1fr); 
     grid-auto-rows: 400px; 
     gap: 60px; 
-    
     background-color: #000;
     width: 100%;
-    
-    /* ✅ 최대 너비를 1200px로 늘려 박스 전체 크기를 키웁니다. */
     max-width: 1200px; 
-    
     margin: 0;
 }
 
@@ -1185,17 +1164,12 @@ body {
 .project-card {
     display: block;
     position: relative;
-    
-    /* ❌ 작품 박스를 나누는 선 제거 */
     border-right: none; 
     border-bottom: none; 
-    
     background-color: #000;
     padding: 0;
     text-decoration: none;
     color: #fff;
-    
-    /* 필터링을 위한 transition 추가 */
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
@@ -1300,24 +1274,20 @@ body {
 /* 마우스 오버(Hover) 효과 */
 .page-btn:hover {
     color: #333; /* 텍스트를 진한 회색으로 변경 */
-    /* 마우스 오버 영역을 시각적으로 알려주기 위해 살짝 밝은 배경을 추가할 수 있습니다. */
     background-color: rgba(0, 0, 0, 0.05); 
 }
 
 /* 현재 페이지 버튼 스타일 (보라색 강조) */
 .page-btn.active {
-    /* 배경과 테두리는 없애고, 텍스트 색상만 보라색으로 */
     background-color: transparent;
     border: none; 
-    color: #7952b3; /* 보라색 계열 */
-    font-weight: bold; /* 활성 페이지를 더 강조 (선택 사항) */
+    color: #7952b3;
+    font-weight: bold; 
 }
 
-/* 현재 페이지 버튼에는 마우스 오버 시 효과를 더 명확하게 */
 .page-btn.active:hover {
-    /* active 버튼은 hover 시 색상이 진해지는 대신, 다른 배경 효과를 줄 수 있습니다. */
     color: #6c47a3; /* 보라색을 조금 더 어둡게 */
-    background-color: rgba(121, 82, 179, 0.1); /* 보라색 계열로 살짝 배경 변화 */
+    background-color: rgba(121, 82, 179, 0.1); 
 }
 
 
@@ -1370,7 +1340,7 @@ body {
 /* [수정] 상단 나가기 버튼 (왼쪽 화살표 + 오른쪽 X 버튼) */
 .nav-controls-single {
     display: flex;
-    justify-content: flex-start; /* 왼쪽 화살표를 왼쪽에 배치 */
+    justify-content: flex-start; 
     position: relative;
     margin-bottom: 20px;
 }
@@ -1407,7 +1377,6 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     padding-top: 50px; 
-    /* 스크롤 기능 부여 */
     overflow-y: auto; 
     /* 스크롤바가 숨겨지더라도 패딩은 유지 (필요 없을 수 있지만, 혹시 모를 상황 대비) */
     padding-right: 15px; 
@@ -1458,71 +1427,67 @@ body {
 
 /* 하단 아이콘 영역 제거로 인한 info-bottom 스타일 정리 */
 .info-bottom {
-    /* 하단 정렬을 위해 공간 확보 */
     font-size: 14px; 
     padding-top: 20px;
 }
 
 
 .view-link-container {
-    margin-top: 20px; /* 장르 목록과 버튼 사이 간격 */
-    border-top: 1px solid #222; /* 구분선 추가 */
+    margin-top: 20px; 
+    border-top: 1px solid #222; 
     padding-top: 15px;
 }
 
-/* 기존 .view-link-btn 스타일 (링크 텍스트 스타일) */
 .view-link-btn {
-    /* 1. 박스 스타일 추가: display: inline-flex -> flex로 변경 */
-    display: flex; /* 가로 중앙 정렬을 위해 flex 사용 */
-    justify-content: center; /* 텍스트 및 아이콘 가로 중앙 정렬 */
+    display: flex; 
+    justify-content: center; 
     align-items: center;
 
-    width: 100%; /* 가로로 길게, 전체 너비 사용 */
+    width: 100%; 
     background: none;
-    border: 1px solid #fff; /* 얇은 흰색 선 박스 추가 */
-    padding: 15px 0; /* 위아래 패딩을 늘려 높이 확보 */
-    margin-top: 30px; /* 위쪽 여백 추가 */
+    border: 1px solid #fff; 
+    padding: 15px 0; 
+    margin-top: 30px; 
 
     /* 기존 스타일 유지 */
     text-decoration: none;
     color: #fff;
-    font-size: 16px; /* 글씨 크기 조금 키움 */
+    font-size: 16px;
     font-weight: 600;
-    transition: all 0.3s ease; /* 모든 전환 효과에 대해 0.3초 설정 */
+    transition: all 0.3s ease; 
 }
 
 /* 호버 시 스타일 */
 .view-link-btn:hover {
-    background-color: #ffffff; /* 호버 시 흰색 배경 */
-    color: #000; /* 호버 시 텍스트 색상을 검정으로 변경 */
-    border-color: #ffffff; /* 호버 시 테두리 색상 유지 */
+    background-color: #ffffff;
+    color: #000; 
+    border-color: #ffffff; 
 }
 
 /* SVG 아이콘 스타일 */
 .view-link-btn svg {
-    width: 20px; /* 아이콘 크기 키우기 */
+    width: 20px; 
     height: 20px;
-    margin-left: 15px; /* 텍스트와 아이콘 간 간격 */
+    margin-left: 15px; 
     transition: all 0.3s ease;
 }
 
 /* 호버 시 아이콘 색상 및 이동 효과 */
 .view-link-btn:hover svg {
-    stroke: #000; /* 호버 시 아이콘 색상을 검정으로 변경 */
-    transform: translateX(3px) translateY(-3px); /* 마우스 오버 시 살짝 움직이는 효과 */
+    stroke: #000; 
+    transform: translateX(3px) translateY(-3px); 
 }
 
 
 /* 비디오를 감싸는 컨테이너 스타일 */
 .video-container {
-    width: 100%; /* 부모 요소의 전체 너비를 사용 */
-    margin: 30px 0; /* 위아래 여백 */
+    width: 100%; 
+    margin: 30px 0; 
     position: relative;
-    /* 비디오가 16:9 비율을 유지하도록 패딩 설정 (세로/가로 비율: 9/16 = 56.25%) */
     padding-bottom: 56.25%; 
     height: 0;
     overflow: hidden;
-    background-color: #000; /* 로딩 중 배경색 */
+    background-color: #000; 
 }
 
 /* <iframe> 스타일 */
@@ -1540,8 +1505,8 @@ body {
     padding-bottom: 10px; /* 버튼을 위한 공간 확보 */
 }
 
-/* ---------------------------------------------------------------------- */
-/* ⭐ 웹킷 브라우저 (Chrome, Safari, Edge)에서 스크롤바 숨기기 ⭐ */
+
+/* 웹킷 브라우저 (Chrome, Safari, Edge)에서 스크롤바 숨기기 */
 .info-middle::-webkit-scrollbar {
     width: 0 !important;
     height: 0 !important;
@@ -1551,7 +1516,7 @@ body {
     /* Firefox에서 스크롤바 숨기기 */
     scrollbar-width: none; 
 }
-/* ---------------------------------------------------------------------- */
+
 
 
 
@@ -1671,9 +1636,8 @@ body {
 }
 
 
-/* ========================================================== */
 /* --- Profile Page Specific Styles (profile.html) --- */
-/* ========================================================== */
+
 
 /* --- Profile Hero Section (Banner) --- */
 .profile-hero-section {
@@ -1869,9 +1833,9 @@ body {
     line-height: 1.2;
 }
 
-/* ========================================================== */
+
 /* --- 그리드 배치 (ADVANTAGE 아래로 교내 활동 이동) --- */
-/* ========================================================== */
+
 
 /* [1열] SKILLS 섹션: 1열, 2행 시작 (기존 유지) */
 .skills {
@@ -1923,9 +1887,10 @@ body {
     grid-row: 3 / span 1; 
     margin-bottom: 80px;
 }
-/* ========================================================== */
+
+
 /* --- Responsive Design (유동적 간격 유지) --- */
-/* ========================================================== */
+
 @media (max-width: 1024px) {
     .profile-section {
         padding: 5vh 3vw;
@@ -1983,9 +1948,9 @@ body {
 
 
 
-/* ========================================================== */
+
 /* --- Archive Section (스크롤 모음집) --- */
-/* ========================================================== */
+
 
 #archive-section {
     min-height: 100vh; /* 섹션 전체 높이 */
@@ -2156,9 +2121,7 @@ body {
 
 /* style.css 파일 (맨 마지막) */
 
-/* ---------------------------------------------------- */
-/* ⚠️ 좁은 화면 레이아웃 재정의 (600px 이하) */
-/* ---------------------------------------------------- */
+
 @media (max-width: 600px) {
 
     /* 1. 레이아웃 배치 변경: 가로 카드들을 세로로! */
@@ -2201,14 +2164,10 @@ body {
 }
 
 
-/* ---------------------------------------------------- */
 /* 🥉 태블릿 스타일 (선택 사항: 601px ~ 1024px) */
-/* ---------------------------------------------------- */
 @media (max-width: 1024px) {
     /* 폰트나 레이아웃이 600px 전에 한 번 더 정리될 필요가 있을 때 사용 */
     .section-intro h1 {
-        /* 여기서 font-size: 2.5em; 은 기존 h1의 폰트 크기를 기준으로 2.5배 커진다는 의미입니다. */
-        /* vw를 사용하는 것이 더 유연하므로, 이 부분은 생략하거나 필요한 경우에만 최소한으로 사용하세요. */
     }
 }
 

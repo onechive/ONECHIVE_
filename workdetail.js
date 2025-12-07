@@ -25,15 +25,22 @@ const workDetails = {
         year: "2025",
         videoLink: "https://youtu.be/gtY91Bhsp2s?si=8ero6QaFj3eeG-XV",
         images: [
-            { src: "img3/2025_Melt_MainMotionPoster.mp4", alt: "Melt 메인 무빙 포스터 영상" },
-            { src: "img3/2025_Melt_MotionPoster1.mp4", alt: "Melt 무빙 포스터 영상1" },
-            { src: "img3/2025_Melt_MotionPoster2.mp4", alt: "Melt 무빙 포스터 영상2" },
+            { src: "img3/2025_Melt2.jpg", alt: "Melt2" },
+            { src: "img3/2025_Melt3.jpg", alt: "Melt3" },
+            { src: "img3/2025_Melt4.jpg", alt: "Melt4" },
+            { src: "img3/2025_Melt5.jpg", alt: "Melt5" },
+            { src: "img3/2025_Melt6.jpg", alt: "Melt6" },
+            { src: "img3/2025_Melt7.jpg", alt: "Melt7" },
+            { src: "img3/2025_Melt8.jpg", alt: "Melt8" },
+            { src: "img3/2025_Melt9.jpg", alt: "Melt9" },
+            { src: "img3/2025_Melt10.jpg", alt: "Melt10" },
+
         ],
     },
 
 
 
-    "2025_kw_3d_hologram": {
+    "RERACHED MEMORY": {
         title: "3D Hologram",
         period: "9.1 ~ 10.22",
         quote:
@@ -46,7 +53,7 @@ const workDetails = {
         '나중에 두꺼운 아크릴판과 더 큰 스케일의 구조물로 확장하여 공간 전체를 감싸는 전시형 홀로그램 작품으로 발전시켜보고 싶습니다. ',
         genres: ["3D", "Motion"],
         year: "2025",
-        videoLink: "https://youtu.be/dIpHaSPzWrQ",
+        videoLink: "https://youtube.com/shorts/1SojN4x9EMg",
         images: [
             { src: "img3/2025_KW_3d_hologram1.jpg", alt: "홀로그램1" },
             { src: "img3/2025_KW_3d_hologram2.jpg", alt: "홀로그램2" },
@@ -64,7 +71,7 @@ const workDetails = {
         '영화 컨택트에서 영감을 받아 언어와 소통을 주제로 준자나 말뿐 아니라 시각적 요소로도 언어가 될 수 있다는 걸을 보여주고자 싶었습니다.',
         genres: ["Interaction"],
         year: "2025",
-        videoLink: "https://youtube.com/shorts/Z9mtEKg_yx0",
+        videoLink: "https://youtube.com/shorts/DanNuCOSs7Y?feature=share",
         images: [
             { src: "img3/2025_KW_TD_Particle1.png", alt: "파티클1" },
             { src: "img3/2025_KW_TD_Particle2.png", alt: "파티클2" },

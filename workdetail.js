@@ -38,8 +38,8 @@ const workDetails = {
 
 
 
-    "2025_kw_3d_hologram": {
-        title: "RERACHED MEMORY",
+    "2025_kw_3d_hologram.": {
+        title: "RERACHED MEMORY.",
         period: "9.1 ~ 10.22",
         quote:
         '경천사지 10층석탑 홀로그램 미니 버전을 직접 제작한 작품입니다. 투명하고 얇은 아크릴 판을 이용해 피라미드 형태의 구조물을 만들고, ' +

@@ -38,7 +38,7 @@ const workDetails = {
 
 
 
-    "3D_Hologram": {
+    "2025_kw_3d_hologram": {
         title: "RERACHED MEMORY",
         period: "9.1 ~ 10.22",
         quote:

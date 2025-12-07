@@ -48,7 +48,6 @@ const workDetails = {
         year: "2025",
         videoLink: "https://youtu.be/dIpHaSPzWrQ",
         images: [
-            { src: "img3/2025_kw_p_3DHologramPoster.mp4", alt: "홀로그램 무빙 포스터" },
             { src: "img3/2025_KW_3d_hologram1.jpg", alt: "홀로그램1" },
             { src: "img3/2025_KW_3d_hologram2.jpg", alt: "홀로그램2" },
 
@@ -67,7 +66,6 @@ const workDetails = {
         year: "2025",
         videoLink: "https://youtube.com/shorts/Z9mtEKg_yx0",
         images: [
-            { src: "img3/2025_kw_p_InteractionPoste.mp4", alt: "파티클 무빙 포스터" },
             { src: "img3/2025_KW_TD_Particle1.png", alt: "파티클1" },
             { src: "img3/2025_KW_TD_Particle2.png", alt: "파티클2" },
             { src: "img3/2025_KW_TD_Particle3.png", alt: "파티클3" },
